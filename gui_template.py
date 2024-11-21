@@ -6,7 +6,6 @@ class GUI:
         self.app = customtkinter.CTk()
         self.app.geometry(f"{width}x{height}")
         self.app.title(app_title)
-        self.app.grid_columnconfigure(0, weight=1)
         
     def widget_setup(self):
         '''Sets up all widgets'''
@@ -23,7 +22,6 @@ class GUI:
         self.setup_labels()
 
         # setup submit buttons
-        
         self.setup_button(self.submit_button)
         self.setup_button(self.next_button)
 

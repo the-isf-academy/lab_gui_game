@@ -89,7 +89,6 @@ class RiddleGameGUI(GUI):
     def guess_riddle_submit(self):
         '''Guesses a riddle via the client'''
 
-       
         id = self.entry_widgets['id_widget'].get()
         guess =self.entry_widgets['guess_widget'].get()
       

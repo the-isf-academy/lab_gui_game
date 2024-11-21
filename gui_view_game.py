@@ -26,7 +26,7 @@ class RiddleGameGUI(GUI):
             self.app,
             text = "Submit",
             command = lambda: self.guess_riddle_submit(),
-            state = 'Disabled'
+            state = 'disabled'
         )
 
         self.next_button = customtkinter.CTkButton(

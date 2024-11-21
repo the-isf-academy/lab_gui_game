@@ -67,9 +67,6 @@ class RiddleGameGUI(GUI):
         self.display_current_riddle()
 
     def display_current_riddle(self):
-        '''Displays the current riddle on the screen 
-        and the entry widget'''
-
         self.reset_textbox()
 
         riddle = self.riddles_list[self.current_riddle_index]
@@ -82,7 +79,7 @@ class RiddleGameGUI(GUI):
         )
 
         self.question_label.place(relx=0.5, rely=0.3, anchor=customtkinter.CENTER)
-        
+
         self.config_entry_widget(['guess_widget'], self.submit_button)
         self.entry_widgets['id_widget'].insert(0, riddle['id'])
 
@@ -97,7 +94,7 @@ class RiddleGameGUI(GUI):
         self.text_box.insert('end',f"{message}") 
         self.display_text_box(x=.5, y=.7, height=50)
 
-        self.submit_button.grid_forget()
+        self.submit_button.place_forget()
 
         self.next_button.place(relx=.5, rely=.8, anchor=customtkinter.CENTER)
 

@@ -4,6 +4,8 @@ import customtkinter
 from random import shuffle
 
 class RiddleGameGUI(GUI):
+
+    
     def __init__(self):
         # inherit all the properties and methods from the parent class
         super().__init__(app_title="Riddler",width=800, height=600)
@@ -58,7 +60,7 @@ class RiddleGameGUI(GUI):
         self.current_riddle_index = 0
 
     def play_game_setup(self):
-        '''Gets all riddles from client and shuffles them'''
+        '''Gets all riddles from client'''
 
         self.play_button.place_forget()
         self.riddles_list = self.riddler_client.all_riddles()

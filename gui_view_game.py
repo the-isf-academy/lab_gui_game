@@ -54,19 +54,14 @@ class RiddleGameGUI(GUI):
             border_spacing=20
         )
 
-        # creates properties for game
-        self.guess_submitted = False
+
         self.current_riddle_index = 0
-        self.total_guesses = 3
 
     def play_game_setup(self):
         '''Gets all riddles from client and shuffles them'''
 
         self.play_button.place_forget()
-
         self.riddles_list = self.riddler_client.all_riddles()
-        shuffle(self.riddles_list)
-
         self.display_current_riddle()
 
     def display_current_riddle(self):
@@ -90,9 +85,8 @@ class RiddleGameGUI(GUI):
         self.entry_widgets['id_widget'].insert(0, riddle['id'])
 
     def guess_riddle_submit(self):
-        '''Guesses a riddle via the client and decreases a guess'''
+        '''Guesses a riddle via the client'''
 
-        self.total_guesses -= 1
        
         id = self.entry_widgets['id_widget'].get()
         guess =self.entry_widgets['guess_widget'].get()
@@ -115,14 +109,9 @@ class RiddleGameGUI(GUI):
 
         self.current_riddle_index += 1
 
-        if self.total_guesses > 0:
-            self.display_current_riddle()
+        self.display_current_riddle()
 
-        else:
-            self.clear()
-            self.text_box.insert('end', "Game Over!")
-            self.display_text_box(x=.5, y=.5, height=50)
-
+     
 
 gui = RiddleGameGUI()
 gui.run()

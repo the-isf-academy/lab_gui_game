@@ -70,9 +70,9 @@ class RiddleGameGUI(GUI):
         '''Displays the current riddle on the screen 
         and the entry widget'''
 
-        riddle = self.riddles_list[self.current_riddle_index]
-
         self.reset_textbox()
+
+        riddle = self.riddles_list[self.current_riddle_index]
 
         self.question_label = customtkinter.CTkLabel(
             self.app,
@@ -82,8 +82,8 @@ class RiddleGameGUI(GUI):
         )
 
         self.question_label.place(relx=0.5, rely=0.3, anchor=customtkinter.CENTER)
+        
         self.config_entry_widget(['guess_widget'], self.submit_button)
-
         self.entry_widgets['id_widget'].insert(0, riddle['id'])
 
     def guess_riddle_submit(self):

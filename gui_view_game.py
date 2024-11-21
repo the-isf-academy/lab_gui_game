@@ -45,9 +45,6 @@ class RiddleGameGUI(GUI):
             'guess_widget': "Enter Riddle Guess",
         }
 
-        # map guess widget with submit button
-        self.config_entry_widget(['guess_widget'], self.submit_button)
-
         # create a text box
         self.text_box = customtkinter.CTkTextbox(
             self.app,
@@ -88,6 +85,7 @@ class RiddleGameGUI(GUI):
         )
 
         self.question_label.place(relx=0.5, rely=0.3, anchor=customtkinter.CENTER)
+        self.config_entry_widget(['guess_widget'], self.submit_button)
 
         self.entry_widgets['id_widget'].insert(0, riddle['id'])
 
@@ -124,6 +122,7 @@ class RiddleGameGUI(GUI):
             self.clear()
             self.text_box.insert('end', "Game Over!")
             self.display_text_box(x=.5, y=.5, height=50)
+
 
 gui = RiddleGameGUI()
 gui.run()
